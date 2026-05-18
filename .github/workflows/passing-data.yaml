@@ -6,4 +6,4 @@ jobs:
   prducer:
     runs-on: ubuntu-24.04
     steps:
-      - run: echo "$GITHUB_OUTPUT"
+      - run: echo "$GITHUB_OUTPUT" | cat
