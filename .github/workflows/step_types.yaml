@@ -20,6 +20,6 @@ jobs:
       - uses: actions/hello-world-javascript-action@79ac0da13ee392da3fdd151813d5ce4658cb7e27
         with:
           who-to-greet: "from an action in the Githuv Action marketplace!"
-      - run: echo "hello from file" > /hello.txt
-      - run: cat /hello.txt
+      - run: echo "hello from file" > ./hello.txt
+      - run: cat ./hello.txt
       - run: pwd 
