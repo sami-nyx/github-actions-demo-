@@ -1,6 +1,6 @@
 name: passing data
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   prducer:
