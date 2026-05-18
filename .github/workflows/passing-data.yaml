@@ -6,7 +6,7 @@ jobs:
   prducer:
     runs-on: ubuntu-24.04
     outputs:
-      fo: ${{ steps.generate-foo.outputs.foo }}
+      foo: ${{ steps.generate-foo.outputs.foo }}
     steps:
       - name: generate and export foo
         id: generate-foo
