@@ -2,6 +2,8 @@ name: Triggering Events
 
 on:
   pull_request:
+    branches:
+      - main
 
 jobs:
   echo-event:
