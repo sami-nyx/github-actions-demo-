@@ -17,4 +17,4 @@ jobs:
       - name: inspect values inside producer
         run: |
           echo "foo (set via github output):    ${{ steps.generate-foo.outputs.foo}}"
-          echo "FOO (set via github env":       $FOO"
+          echo "FOO (set via github env):       $FOO"
