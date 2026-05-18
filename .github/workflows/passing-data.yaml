@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  prducer:
+  producer:
     runs-on: ubuntu-24.04
     outputs:
       foo: ${{ steps.generate-foo.outputs.foo }}
