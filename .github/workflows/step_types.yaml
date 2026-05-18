@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - run: print("Hello from an inline python script in a Github Action Workfflow!")
-      shell: python
+        shell: python
   say-hello-action:
     runs-on: ubuntu-24.04
     steps:
       -uses: actions/hello-world-javascript-action@79ac0da13ee392da3fdd151813d5ce4658cb7e27
-      with:
-        who-to-greet: "from an action in the Githuv Action marketplace!"
+        with:
+          who-to-greet: "from an action in the Githuv Action marketplace!"
