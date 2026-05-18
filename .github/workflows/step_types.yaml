@@ -23,3 +23,4 @@ jobs:
       - run: echo "hello from file" > ./hello.txt
       - run: cat ./hello.txt
       - run: pwd 
+      - run: ls -a
