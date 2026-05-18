@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: create artifact file
-        run: echo << EOF > artifact.txt
+        run: cat << EOF > artifact.txt
               this is a content for artifact
               and this is line 2
               whatever
