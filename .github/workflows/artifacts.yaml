@@ -1,0 +1,32 @@
+name: artifacts example
+on:
+  workflow_dispatch:
+
+jobs:
+
+  artifact-producer:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: create artifact file
+        run: echo << EOF > artifact.txt
+              this is a content for artifact
+              and this is line 2
+              whatever
+              ...
+              EOF
+      - name: create artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: example-artifact
+          path: artifact.txt
+ 
+  artifact-consumer:
+    runs-on: ubuntu-24.04
+    needs: artifact-producer
+    steps:
+      - name: consume artifact
+        uses: actions/download-artifact@v5.0.0
+        with:
+          name: example-artifact
+      - name: cat artifact file
+        run: cat artifact.txt
