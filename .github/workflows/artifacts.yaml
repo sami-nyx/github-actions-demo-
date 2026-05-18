@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: create artifact file
-        run: cat << EOF > artifact.txt
-              this is a content for artifact
-              and this is line 2
-              whatever
-              ...
-              EOF
+        run: |
+            cat << EOF > artifact.txt
+            this is a content for artifact
+            and this is line 2
+            whatever
+            ...
+            EOF
       - name: create artifact
         uses: actions/upload-artifact@v4.6.2
         with:
