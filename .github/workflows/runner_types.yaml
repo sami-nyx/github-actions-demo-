@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  my-github-hosted-ubuntu-24.04-vm:
+  my-github-hosted-ubuntu-vm:
     name: github ubuntu 24.04 vm runner
     runs-on: ubuntu-24.04
     steps:
