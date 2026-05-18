@@ -1,0 +1,13 @@
+name: runner types
+
+on:
+  workflow_dispatch:
+
+jobs:
+  github-hosted-ubuntu-24.04-vm:
+    name: github ubuntu 24.04 vm runner
+    steps:
+      - name: show runner info
+        run: |
+          echo "hello from ${{ runner.os }}-${{ runner.arch }}"
+          echo "runner name (type): ${{ runner.name }}"
