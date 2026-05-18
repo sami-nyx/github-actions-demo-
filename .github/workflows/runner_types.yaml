@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  my-github-hosted-ubuntu-vm:
+  github-hosted-ubuntu-vm:
     name: github ubuntu 24.04 vm runner
     runs-on: ubuntu-24.04
     steps:
@@ -12,3 +12,30 @@ jobs:
         run: |
           echo "hello from ${{ runner.os }}-${{ runner.arch }}"
           echo "runner name (type): ${{ runner.name }}"
+  github-hosted-windows-vm:
+    name: github windows vm runner
+    runs-on: windows-2022
+    steps:
+      - name: show runner info
+        run: |
+          echo "hello from ${{ runner.os }}-${{ runner.arch }}"
+          echo "runner name (type): ${{ runner.name }}"
+  github-hosted-macos-vm:
+    name: github macos 14 vm runner
+    runs-on: macos-14
+    steps:
+      - name: show runner info
+        run: |
+          echo "hello from ${{ runner.os }}-${{ runner.arch }}"
+          echo "runner name (type): ${{ runner.name }}"
+  github-hosted-ubuntu-vm-container:
+    name: github ubuntu 24.04 vm container runner
+    runs-on: ubuntu-24.04
+    container:
+      image: alpine:3.20
+    steps:
+      - name: show runner info
+        run: |
+          echo "hello from ${{ runner.os }}-${{ runner.arch }}"
+          echo "runner name (type): ${{ runner.name }}"
+  
