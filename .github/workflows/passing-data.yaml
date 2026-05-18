@@ -25,5 +25,5 @@ jobs:
     steps:
       - name: inspect producer outputs
         run: |
-          echo "foo (via github output):  ${{ steps.generate-foo.outputs.foo }}" 
+          echo "foo (via github output):  ${{ needs.producer.outputs.foo }}" 
           echo "FOO (via github env):     ${FOO:-<UNSET>}"
