@@ -1,0 +1,9 @@
+name: passing data
+on:
+  workflow-dispatch:
+
+jobs:
+  prducer:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "$GITHUB_OUTPUT"
