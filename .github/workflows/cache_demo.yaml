@@ -1,7 +1,7 @@
 name: Caching
 
 on:
-  workdflow_dispatch:
+  workflow_dispatch:
 jobs:
   cache-action:
     runs-on: ubuntu-24.04
