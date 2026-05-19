@@ -19,13 +19,13 @@ jobs:
           echo "cache miss, Generationg contents"
           mkdir -p demo-cache
           date > demo-cache/timestamp.txt
-
-      - name: Save cache
-        if: steps.cache-attempt.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
-        with:
-          path: demo-cache
-          key: demo-cache-v1
+      # externous
+      # - name: Save cache
+      #   if: steps.cache-attempt.outputs.cache-hit != 'true'
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: demo-cache
+      #     key: demo-cache-v1
 
       - name: Verify cache
         if: steps.cache-attempt.outputs.cache-hit != 'true'
