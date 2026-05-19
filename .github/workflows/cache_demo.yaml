@@ -1,0 +1,37 @@
+name: Caching
+
+on:
+  workdflow_dispatch:
+jobs:
+  cache-action:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Restore cache
+        id: cache-attempt
+        uses: actions/cache@v4
+        with:
+          path: demo-cache
+          key: demo-cache-v1
+
+      - name: Populate cache dir
+        if: steps.cache-attempt.outputs.cache-hit != 'true'
+        run: |
+          echo "cache miss, Generationg contents"
+          mkdir -p demo-cache
+          date > demo-cache/timestamp.txt
+
+      - name: Save cache
+        if: steps.cache-attempt.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: demo-cache
+          key: demo-cache-v1
+
+      - name: Verify cache
+        if: steps.cache-attempt.outputs.cache-hit != 'true'
+        run: |
+          echo "cache-hit? -> ${{ steps.cache-attempt.outputs.cache-hit }}"
+          cat demo-cach/timestamp.txt 
+
+
+
