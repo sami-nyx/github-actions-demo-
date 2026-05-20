@@ -8,8 +8,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  runs-on: ubuntu-24.04
   matrix-run:
+    runs-on: ubuntu-24.04
     env:
       index: 0
     strategy:
