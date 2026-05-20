@@ -19,7 +19,7 @@ jobs:
         exclude:
           - number: 1
           - letter: c
-    timout: 4
+    timeout-minutes: 4
 
     steps:
       
