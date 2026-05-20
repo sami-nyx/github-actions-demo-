@@ -16,9 +16,9 @@ jobs:
       matrix:
         number: [1 , 2]
         letter: [a, b, c]
-        exclude:
-          - number: 1
-          - letter: c
+        # exclude:
+        #   - number: 1
+        #   - letter: c
     timeout-minutes: 4
 
     steps:
