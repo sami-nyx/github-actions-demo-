@@ -1,0 +1,37 @@
+name: Mtrix & conditionals
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  matrix-run:
+    env:
+      index: 0
+    strategy:
+      fail-fast: true
+      matrix:
+        number: [1 , 2]
+        letter: [a, b, c]
+        exclude:
+          - number: 1
+          - letter: c
+    timout: 4
+
+    steps:
+      
+      - name: Print iteration value
+        run: |
+          echo "running iteration : $index"
+          echo "==${{ matrix.number }}-${{ matrix.letter }}=="
+          $index=$($index + 1)
+
+      - name: Print all except 2-b
+        if: ${{ ! ( matrix.number == 2 && matrix.letter == b) }}
+        run: |
+          echo "filterd:"
+          echo ">>${{ matrix.number }}-${{ matrix.letter }}<<"
+          
