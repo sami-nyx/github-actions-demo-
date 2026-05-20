@@ -16,9 +16,10 @@ runs:
   using: 'composite'
   steps:
     - name: Greet
-      run: echo "hello, $who-to-greet"
+      run: echo "hello, $who_to_greet"
       shell: bash
-
+      env:
+        who_to_greet: ${{ inputs.who-to-greet }}
     - name: generate a random
       id: generate-random
       run: echo "random-number=$RANDOM" >> $GITHUB_OUTPUT
