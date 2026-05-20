@@ -38,5 +38,5 @@ jobs:
     steps:
       - name: Sleep 30s (to give time to be canceled)
       - run: |
-        echo "sleeping for a while"
-        sleep 30
+          echo "sleeping for a while"
+          sleep 30
