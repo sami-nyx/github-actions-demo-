@@ -1,0 +1,25 @@
+name: demo firs party action
+description: Greet someone and generate a random number as an output
+
+inputs:
+  who-to-greet:
+    description: just giv some value man ;)
+    required: true
+    #if reuqired why default?
+    default: world
+
+outputs:
+  random-number:
+    description: some random random
+    value: ${{ steps.generate-random.outputs.random-number }} 
+runs:
+  using: 'composite'
+  steps:
+    - name: Greet
+      run: echo "hello, $who-to-greet"
+      shell: bash
+
+    - name: generate a random
+      id: generate-random
+      run: echo "random-number=$RANDOM" >> $GITHUB_OUTPUT
+      shell: bash
