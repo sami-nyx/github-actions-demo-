@@ -1,0 +1,19 @@
+name: first party action demo
+on:
+  workflow_dispatch:
+
+jobs:
+  use-first-party-action:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: code chackout
+        uses: actions/checkout@v5
+
+      - name: use action to greet me first
+        id: first-party-action
+        uses: ./actions/composit/action.yaml
+        with:
+          who-to-greet: sami
+
+      - name: inspect FPA output
+        run: echo "FPA output: {{ steps.first-party-action.outputs.random-number }}"
