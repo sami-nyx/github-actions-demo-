@@ -16,4 +16,4 @@ jobs:
           who-to-greet: sami
 
       - name: inspect FPA output
-        run: echo "FPA output: {{ steps.first-party-action.outputs.random-number }}"
+        run: echo "FPA output {{ steps.first-party-action.outputs.random-number }}"
