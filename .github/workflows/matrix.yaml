@@ -11,10 +11,6 @@ jobs:
   matrix-run:
     
     runs-on: ubuntu-24.04
-    
-    env:
-      index: 0
-    
     strategy:
       fail-fast: true
       matrix:
@@ -29,10 +25,8 @@ jobs:
       
       - name: Print iteration value
         run: |
-          echo "running iteration : $index"
           echo "==${{ matrix.number }}-${{ matrix.letter }}=="
-          index=$($index + 1)
-
+      
       - name: Print all except 2-b
         if: ${{ ! ( matrix.number == 2 && matrix.letter == 'b') }}
         run: |
