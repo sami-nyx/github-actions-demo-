@@ -8,6 +8,9 @@ jobs:
     steps:
       - name: code chackout
         uses: actions/checkout@v5
+      
+      - name: inspect
+        run: ls a
 
       - name: use action to greet me first
         id: first-party-action
