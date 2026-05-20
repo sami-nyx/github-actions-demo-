@@ -30,7 +30,7 @@ jobs:
           $index=$($index + 1)
 
       - name: Print all except 2-b
-        if: ${{ ! ( matrix.number == 2 && matrix.letter == b) }}
+        if: ${{ ! ( matrix.number == 2 && matrix.letter == 'b') }}
         run: |
           echo "filterd:"
           echo ">>${{ matrix.number }}-${{ matrix.letter }}<<"
